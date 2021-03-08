@@ -1,0 +1,27 @@
+html{
+    font-size: 10px;
+}
+/*---------------------------------------*/
+#header{
+    height: 5em;
+    background-color: rgb(197, 107, 107);
+}
+
+#visual{
+    height: 5em;
+    /* font-size: 3em; */
+    background-color: sandybrown;
+}
+#header>div{
+    height: 10rem;
+    font-size: 60px;
+    background-color: violet;
+}
+
+#body{
+    background-color:skyblue ;
+}
+#footer{
+    font-size: 50px;
+    background-color: tomato;
+}
