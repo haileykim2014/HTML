@@ -1,38 +1,52 @@
 html{
-    
+  height: 100%;
 }
 body{
     margin : 0px;
 
-}
+    display: flex;
 
+    flex-flow: column nowrap;
+    height: 100%;
+    
+}
 
 /*------------------------------------------------*/
 .float-content{
-    background-color: blueviolet;
     width: 960px;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
     min-height: inherit;
-    opacity: 0.7;
+    opacity: 0.7; /*투명도*/
 }
 
 #header{
-    background-color : yellow;
+    
     height: 70px;
+    width: 70%;
 
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    /* z-index: 999; 앞으로보내기 */
+    background-color: yellow;
 }
 
 #visual{
-    background-color: red;
     height: 171px ;
+    border-top :3px solid #8cba34;
+    background: #8d0e0e url("../images/bg-visual.png") no-repeat center;
 }
 
 
 #body{
-    background-color: green;
     min-height: 300px ;
+    flex-grow: 1;
+    border-top : 5px solid #8CBA34;
+    margin-top: 1px;
+   
 }
     #body>.float-content{
         display: flex;
@@ -41,17 +55,38 @@ body{
     #aside{
         width: 205px;
         min-height: inherit;
-        background-color: yellow;
+        
     }
 
     main{
         width: 755px;
         min-height: inherit;
-        background-color: red;
+        background : url("../images/1.jpg")no-repeat;
     } 
+    #quick-menu{
+        background-color: aqua;
+
+        position: relative;
+        left: 100px;
+        top: 100px;
+    }
+    #box-container{
+        width: 300px;
+        height: 300px;
+        background-color: gray;
+        position: relative;
+    }
+        .box{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
 
 #footer{
-    background-color : blue ;
+    background-color : #313131 ;
     height: 100px;
 }
 
