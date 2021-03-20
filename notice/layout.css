@@ -1,0 +1,37 @@
+html,body{
+    height: 100%;
+    margin: 0;
+}
+
+#root{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 250px 750px 1fr;
+    grid-template-rows: 70px 171px 1fr 100px;
+    grid-template-areas: 
+    "header header header header"
+    "visual visual visual visual"
+    ". aside main ."
+    "footer footer footer footer";
+}
+
+#root>div.box1{
+    background-color:#f48fb1;
+    grid-area: header;
+}
+.box2{
+    background-color:#ce93d8;
+    grid-area: visual;
+}
+.box3{
+    background-color:#bbdefb;
+    grid-area: aside;
+}
+.box4{
+    background-color:#aed581;
+    grid-area: main;
+}
+.box5{
+    background-color:#fff59d;
+    grid-area: footer;
+}

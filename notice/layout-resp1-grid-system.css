@@ -1,0 +1,32 @@
+#root{
+    display: grid;
+    grid-template-columns: repeat(12,[col-start] 1fr);
+    gap: 20px; /*박스사이 갭*/
+
+}
+#root>*{ /*root안에 있는것 모두적용*/
+    background-color: rgb(245, 37, 37);
+    grid-column: col-start /span 12;
+}
+
+@media screen and (min-width: 500px) {
+
+    #root > .side,
+    #root > .ad{
+        grid-column: 1 /span 3; /*1열부터 3칸*/
+    }
+    #root > .content,
+    #root > .main-footer{
+        grid-column: 4 / span 9; /*4열부터 9칸*/
+    }
+    #root > .side,
+    #root > .content{ 
+        grid-row: 3; /*3번라인 1칸*/
+    }
+    #root >.ad,
+    #root > .main-footer{
+        grid-row: 4;
+    
+    }
+    
+}
