@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\PetHaru"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "notice"
+	}
+}

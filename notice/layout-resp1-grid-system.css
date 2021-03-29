@@ -30,3 +30,28 @@
     }
     
 }
+@media screen and (min-width : 800px) {
+    #root > .main-nav{
+        grid-column: 1/span 2;
+        grid-row: 2/span 2;
+    }
+    #root > .content{
+        grid-column: 3 / span 8;
+        grid-row: 2 / span 2;
+    }
+    #root > .side{
+        grid-column: 11 / span 2;
+        grid-row: 2; /*2줄 1칸*/
+    }
+    #root > .ad{
+        grid-column: 11 / span 2;
+        grid-row: 3;
+    }
+    #root > .main-footer{
+        grid-column: 1 / span 12;
+        grid-row: 4;
+    }
+
+
+    
+}

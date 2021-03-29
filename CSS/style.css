@@ -1,92 +1,178 @@
-html{
-  height: 100%;
-}
-body{
-    margin : 0px;
-
-    display: flex;
-
-    flex-flow: column nowrap;
+html,body{
     height: 100%;
-     
+    margin:0;
 }
 
-/*------------------------------------------------*/
+a{
+    color:initial;
+    text-decoration: initial; /*선으로 텍스트를꾸밈*/
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------------------------------------------------- */
+.d-none{
+    display: none;
+}
+
+
+/* --------------------------------------------------------------- */
 .float-content{
-    width: 960px;
+    /* background-color: black; */
+    width:960px;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
-    min-height: inherit;
-    opacity: 0.7; /*투명도*/
+    min-height:inherit;
+    opacity: 0.7;
+    /* height: inherit; */
+}
+
+#root{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 205px 755px 1fr;
+    grid-template-rows: 500px 171px 1fr 100px;
+    grid-template-areas: 
+    "header header header header"
+    "visual visual visual visual"
+    "body body body body"
+    "footer footer footer footer";
 }
 
 #header{
-    
-    height: 70px;
-    width: 70%;
-
-    position: absolute;
-    top: 100px;
-    left: 100px;
-
-    /* z-index: 999; 앞으로보내기 */
-    background-color: yellow;
+    background-color: #ffffff;
+    grid-area: header;
 }
 
 #visual{
-    height: 171px ;
-    border-top :3px solid #8cba34;
-    background: #8d0e0e url("../images/bg-visual.png") no-repeat center;
+    border-top:3px solid #8CBA34;
+    /* background:#313131 url("../images/bg-visual.png") no-repeat center; */
+    grid-area: visual;
 }
-
 
 #body{
-    min-height: 300px ;
-    flex-grow: 1;
-    border-top : 5px solid #8CBA34;
+    border-top:5px solid #8CBA34;
     margin-top: 1px;
-   
+    grid-area: body;
+
+    display: grid;
+    grid-template-columns: 1fr 205px 755px 1fr;  
+    grid-template-rows: 1fr;  
+    grid-template-areas: ". aside main .";
 }
-    #body>.float-content{
+
+#aside{
+    background-color: blue;
+    grid-area: aside;
+}
+
+#main{
+    background-color: blueviolet;
+    grid-area: main;
+}
+
+#footer{
+    background-color: #313131;
+    grid-area: footer;
+}
+
+/* @media screen and (min-width: 500px){
+
+} */
+
+@media screen and (max-width: 960px){
+    
+    .float-content{        
+        width:100%;
+    }
+    
+    #root{
+        
+        grid-template-columns: 1fr;        
+        grid-template-areas: 
+        "header"
+        "visual"
+        "body"
+        "footer";
+    }
+
+    #body{        
+        grid-template-columns: 1fr;    
+        grid-template-areas: "main";
+    }
+}
+
+/* ------------------------------------------------------------------- */
+
+.main-menu{    
+    font-family: "맑은 고딕", "고딕", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    display: inline-block;
+}
+
+    .main-menu>ul{
         display: flex;
     }
 
-    #aside{
-        width: 205px;
-        min-height: inherit;
-        
-    }
-
-    main{
-        width: 755px;
-        min-height: inherit;
-        background : url("../images/1.jpg")no-repeat;
-    } 
-    #quick-menu{
-        background-color: aqua;
-
-        position: relative;
-        left: 100px;
-        top: 100px;
-    }
-    #box-container{
-        width: 300px;
-        height: 300px;
-        background-color: gray;
-        position: relative;
-    }
-        .box{
-            position: absolute;
-            left: 50px;
-            top: 50px;
-            width: 100px;
-            height: 100px;
-            background-color: aquamarine;
+        .main-menu>ul>li{
+            padding-left:24px;
+            background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
+        }
+        .main-menu>ul>li:first-child{
+            padding-left: 0px;
+            background: none;
         }
 
-#footer{
-    background-color : #313131 ;
-    height: 100px;
-}
+        .main-menu>ul>li>a:hover{
+            color: orange;
+        }
+
+
+.member-menu{    
+        font-family: "맑은 고딕", "고딕", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        color:#979797;
+        display: inline-block;
+    }
+    .member-menu>ul{
+        display: flex;
+    }
+        .member-menu>ul>li{
+            padding-left: 9px;
+            background: url("../images/bg-member-menu-sp.png") no-repeat 4.5px center;
+        }
+        .member-menu>ul>li:first-child{
+            padding-left: 0px;
+            background: none;
+        }
+
+.breadcrumb{
+        font-family: "맑은 고딕";
+        font-size: 10px;
+        font-weight: bold;
+        color:#979797;
+        display: inline-block;
+    }
+    .breadcrumb>ol{
+        display: flex;
+        list-style: none; /*번호속성지움*/
+        padding-left: 0; /*왼쪽에붙여서나열*/
+    }
+    .breadcrumb>ol>li{
+        padding-left: 10px;
+        background: url("../images/icon-path.png") no-repeat 0px center;
+    }
+    .breadcrumb>ol>li:first-child{
+        padding-left: 20px;
+        background:url("../images/icon-home.png") no-repeat 0px center;
+    }
+
 
