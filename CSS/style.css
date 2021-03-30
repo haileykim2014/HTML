@@ -16,9 +16,14 @@ ul{
 
 /* ---------------------------------------------------- */
 .d-none{
-    display: none;
+    display: none !important;
 }
-
+/* ---------------------------------------------------- */
+.button{
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+}
 
 /* --------------------------------------------------------------- */
 .float-content{
@@ -166,13 +171,30 @@ ul{
         list-style: none; /*번호속성지움*/
         padding-left: 0; /*왼쪽에붙여서나열*/
     }
-    .breadcrumb>ol>li{
-        padding-left: 10px;
-        background: url("../images/icon-path.png") no-repeat 0px center;
-    }
-    .breadcrumb>ol>li:first-child{
+        .breadcrumb>ol>li{
+            padding-left: 10px;
+            background: url("../images/icon-path.png") no-repeat 0px center;
+        }
+        .breadcrumb>ol>li:first-child{
         padding-left: 20px;
         background:url("../images/icon-home.png") no-repeat 0px center;
-    }
+        } 
 
+.customer-menu{
+    display: inline-block;
 
+}
+.customer-menu>ul{
+    display: flex;
+}
+   
+    .customer-menu .mypage-button{              
+        background: url("../images/txt-mypage.png") no-repeat center; 
+        width: 72px;/*블럭에만 적용됨*/
+        height: 17px;
+    }     
+    .customer-menu .customer-button{      
+        background: url("../images/txt-customer.png") no-repeat center; 
+        width: 72px;/*블럭에만 적용됨*/
+        height: 17px;
+    }     
