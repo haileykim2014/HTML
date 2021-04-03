@@ -5,7 +5,7 @@ html,body{
 
 a{
     color:initial;
-    text-decoration: initial; /*선으로 텍스트를꾸밈*/
+    text-decoration: initial;
 }
 
 ul{
@@ -18,11 +18,26 @@ ul{
 .d-none{
     display: none !important;
 }
-/* ---------------------------------------------------- */
-.button{
+
+/* ------------------------------------ */
+.button,
+.icon,
+.img{/*글자없애고 이미지넣는메뉴*/
     display: inline-block;
     text-indent: -999px;
     overflow: hidden;
+}
+.img-notepubs{
+    background: url("../images/notepubs.png") no-repeat;
+    width: 180px;
+    height: 50px;
+
+}
+.img-namoolab{
+    background: url("../images/namoolab.png") no-repeat;
+    width: 180px;
+    height: 50px;
+
 }
 
 /* --------------------------------------------------------------- */
@@ -41,7 +56,7 @@ ul{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 205px 755px 1fr;
-    grid-template-rows: 500px 171px 1fr 100px;
+    grid-template-rows: 70px 171px 1fr 100px;
     grid-template-areas: 
     "header header header header"
     "visual visual visual visual"
@@ -52,32 +67,41 @@ ul{
 #header{
     background-color: #ffffff;
     grid-area: header;
+   
 }
 
 #visual{
     border-top:3px solid #8CBA34;
-    /* background:#313131 url("../images/bg-visual.png") no-repeat center; */
+    background:#313131 url("../images/bg-visual.png") no-repeat center;
     grid-area: visual;
 }
+
+    #visual .float-content{
+        background:#313131 url("../images/customer/visual.png") no-repeat center;
+    }
 
 #body{
     border-top:5px solid #8CBA34;
     margin-top: 1px;
     grid-area: body;
-
-    display: grid;
-    grid-template-columns: 1fr 205px 755px 1fr;  
-    grid-template-rows: 1fr;  
-    grid-template-areas: ". aside main .";
 }
 
+    #body .float-content{
+        display: grid;
+        grid-template-columns: 1fr 205px 755px 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". aside main .";
+        background: url("../images/bg-body.png") repeat-y center;
+    }
+
+
 #aside{
-    background-color: blue;
     grid-area: aside;
+    background: url("../images/bg-aside-title.png") no-repeat;
 }
 
 #main{
-    background-color: blueviolet;
+    
     grid-area: main;
 }
 
@@ -114,14 +138,31 @@ ul{
 
 /* ------------------------------------------------------------------- */
 
+#header>.float-content{
+    position: relative;
+}
+
+.logo{
+    margin: 0;
+    display: inline-block;
+
+    position: absolute;/* absolute(origin-문서좌/상)/relative(원위치)/fixed(화면좌/상)/sticky; */
+    left:0px;
+    top:23px;
+}
+
 .main-menu{    
+    display: inline-block;
+
     font-family: "맑은 고딕", "고딕", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     font-weight: bold;
     color: #000;
-    display: inline-block;
-}
 
+    position: absolute;
+    left:200px;
+    top:27px;
+}
     .main-menu>ul{
         display: flex;
     }
@@ -130,71 +171,141 @@ ul{
             padding-left:24px;
             background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
         }
+
         .main-menu>ul>li:first-child{
-            padding-left: 0px;
+            padding-left:0px;
             background: none;
         }
 
         .main-menu>ul>li>a:hover{
-            color: orange;
+            color:rgb(247, 129, 34);
         }
 
+        .member-menu{
+            display: inline-block;
 
-.member-menu{    
-        font-family: "맑은 고딕", "고딕", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 10px;
-        font-weight: bold;
-        color:#979797;
-        display: inline-block;
-    }
-    .member-menu>ul{
+            position: absolute;
+            right: 0px;
+            top:20px;
+        }
+        
+            .member-menu > ul{
+                display: flex;    
+            }
+            
+                .member-menu > ul > li{
+                    font-family: "맑은 고딕", "고딕", sans-serif;
+                    font-size:10px;
+                    font-weight: bold;
+                
+                    padding-left: 9px;
+                    background: url("../images/bg-member-menu-sp.png") no-repeat 5px;
+                }
+                
+                .member-menu > ul > li:first-child{
+                    padding-left: 0px;
+                    background: none;
+                }
+
+.lecture-search-form{
+
+    display: inline-block;
+
+    width: 308px;
+    height: 25px;
+    border: 5px solid #8CBA34;
+
+    position: absolute;
+    left:468px;
+    top:21px;
+}
+
+.lecture-search-form form{
+    height: 100%;
+}
+
+    .lecture-search-form fieldset{
         display: flex;
-    }
-        .member-menu>ul>li{
-            padding-left: 9px;
-            background: url("../images/bg-member-menu-sp.png") no-repeat 4.5px center;
-        }
-        .member-menu>ul>li:first-child{
-            padding-left: 0px;
-            background: none;
-        }
 
-.breadcrumb{
-        font-family: "맑은 고딕";
-        font-size: 10px;
+        border:0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lecture-search-form fieldset label{
+        font-size: 11px;
         font-weight: bold;
-        color:#979797;
-        display: inline-block;
+        flex-basis: 55px;
+
+        line-height: 25px;
+        text-align: center;
     }
-    .breadcrumb>ol{
-        display: flex;
-        list-style: none; /*번호속성지움*/
-        padding-left: 0; /*왼쪽에붙여서나열*/
+
+    .lecture-search-form fieldset input[type=text]{
+        flex-grow: 1;
+        border:0;
+        /* text-indent: 5px; */
+        padding-left: 5px;
+        font-size: 11px;
+        font-weight: bold;
+        color: cornflowerblue;
     }
-        .breadcrumb>ol>li{
-            padding-left: 10px;
-            background: url("../images/icon-path.png") no-repeat 0px center;
-        }
-        .breadcrumb>ol>li:first-child{
-        padding-left: 20px;
-        background:url("../images/icon-home.png") no-repeat 0px center;
-        } 
+
+    .lecture-search-form fieldset input[type=submit]{
+        flex-basis:31px;        
+        background: url("../images/btn-zoom.png") no-repeat center;
+        
+        border:0;
+        border-left: 1px solid #8CBA34;
+    }
+
 
 .customer-menu{
     display: inline-block;
+    position: absolute;
+    right: 0px;
+    top:40px;
+}
+
+    .customer-menu>ul{
+        display: flex;
+        
+    }
+        .customer-menu .mypage-button{        
+            background: url("../images/txt-mypage.png") no-repeat center;
+            width: 72px;
+            height: 17px;        
+        }
+
+        .customer-menu .customer-button{
+            background: url("../images/txt-customer.png") no-repeat center;
+            width: 72px;
+            height: 17px;
+        }
+.aside-main-menu>h1{    
+
+    font-family: "맑은 고딕";
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+
+}  
+.aside-main-menu>ul>li{
+    background: url("../images/bg-aside-menu-hsp.png") no-repeat center bottom;
+    height: 26px;
+    line-height: 26px;
 
 }
-.customer-menu>ul{
-    display: flex;
+.aside-main-menu a{
+    font-family: "맑은 고딕";
+    font-weight: bold;
+    font-size: 11px;
+    color: #808080;
+    padding-left: 26px;
+    text-decoration: none;
 }
-   
-    .customer-menu .mypage-button{              
-        background: url("../images/txt-mypage.png") no-repeat center; 
-        width: 72px;/*블럭에만 적용됨*/
-        height: 17px;
-    }     
-    .customer-menu .customer-button{      
-        background: url("../images/txt-customer.png") no-repeat center; 
-        width: 72px;/*블럭에만 적용됨*/
-        height: 17px;
-    }     
+.aside-main-menu a:hover,
+.aside-main-menu a.current
+{
+    background: url("../images/icon-current.png") no-repeat 12px center;
+}
