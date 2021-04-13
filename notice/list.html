@@ -142,13 +142,13 @@
                         <section class="page-state">
                             <h1 class="d-none">현재 페이지 정보</h1>
                             <div>
-                                1 / 2 pages
+                               <span class="text-strong"> 1</span> / 2 pages
                             </div>
                         </section>
 
-                        <nav>
-                            <h1>페이저</h1>
-                            <div>이전</div>
+                        <nav class="pager">
+                            <h1 class="d-none">페이저</h1>
+                            <div class="button">이전</div>
                             <ul>
                                 <li>1</li>
                                 <li>2</li>
@@ -156,7 +156,7 @@
                                 <li>4</li>
                                 <li>5</li>
                             </ul>
-                            <div>다음</div>
+                            <div class="button">다음</div>
                         </nav>
 
                     </section>
@@ -174,13 +174,56 @@
     </div>
 
     <script>
+       
+       var x = prompt("x값을 입력하세요",0);
+       var y = prompt("y값을 입력하세요",0);
+        x = parseInt(x);
+        y = parseInt(y);
+        alert(x+y);
+        
+        // var x = 3;
+        // var y = 0;
+        // window.alert(x+y);
+        // function f1(){
+        //     var a = 1;
+        //     return function f2(){
+        //         return a;
+        //     };
+        // }
+        // var f = f1();
+        // var a = f;
+        // console.log(a);
+
+        // var add = new Function("x, y", "return x+y;");
+        // console.log(add(3,4));
+
+        // var result = add(3,4);
+
+        // var add = function(x,y){
+        //     return x + y;
+        // };
+        // console.log(result);
+
+
         // var ar = [2,3,4];
         // var obj = {"kor":10, "eng":20, "math":30};
         // for(var key in obj)
         // console.log(obj[key]);
-        var a =1;
-        var a= 2;
-        console.log(a);
+        // var a =1;
+        // var a= 2;
+        // console.log(a);
+
+        // var exam = {math:50};
+        // exam.kor = 30;
+        // exam["eng"] = 40;
+        // var a = "kor";
+        // console.log(exam.a);
+        // console.log(exam[a]);
+
+
+        // for(var i in exam)
+        // console.log(exam[i]);
+
 
         // for(var i in ar)
         //  console.log(ar[i]);
