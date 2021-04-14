@@ -50,8 +50,17 @@ a{
     text-align: left!important;
 }
 .text-strong{
-    color:var(--color-strong);
-    font-weight:bold;
+    color:var(--color-strong) !important;
+    font-weight:bold !important;
+}
+.mt-2{
+    margin-top: 5px!important;
+}
+.mt-3{/*마진기본단계*/
+    margin-top: 10px!important;
+}
+.mt-4{
+    margin-top: 15px!important;
 }
 /* --content block sytle-------------------------------------------------- */
 .table{
@@ -212,6 +221,8 @@ a{
     text-align: right;
 }
 .pager{
+    display: flex;
+    justify-content: center;
 
 }
 .pager>div:nth-child(2){
@@ -225,21 +236,21 @@ a{
     width: 15px;
     background: url("../images/btnNext.png") no-repeat center;
 
-
     overflow: hidden;
 }
 
 .pager>ul{
     display: flex;
-    height: 15px;
-    
+    height: 15px;   
+    margin: 0 4px; 
 }
 .pager li{
-    width: 15px;
     line-height: 15px;
     text-align: center;
-    border: 1px solid gray;
+    width: 15px;
 }
+
+
 
 
 

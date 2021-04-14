@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <script>
+        function printSum(){
+            var x = prompt('x값을 입력하세요');
+            var y = prompt('y값을 입력하세요');
+            x = parseInt(x);
+            y = parseInt(y);
+            alert(x+y);
+        }
+    </script>
 </head>
 
 <body>
@@ -68,7 +77,12 @@
         <div id="body">
             <div class="float-content">
                 <aside id="aside">
-                    <h1>고객센터</h1>
+                    <h1 id="asideTitle" onclick="printSum();">고객센터</h1>
+                    <script>
+                        var html = "<span>안녕하세요</span>";
+                        // window.document.write(html);
+                        asideTitle.innerHTML += html;
+                    </script>
                     <nav class="main-aside-menu">
                         <h1>고객센터메뉴</h1>
                         <ul>
@@ -102,7 +116,7 @@
                         </section>
 
                         <section>
-                            <h1>공지사항 목록</h1>
+                            <h1 class="d-none">공지사항 목록</h1>
                             <table class="table">
                                 <thead>
                                     <tr>                                  
@@ -139,18 +153,18 @@
                             </table>
                         </section>
 
-                        <section class="page-state">
+                        <section class="page-state mt-3">
                             <h1 class="d-none">현재 페이지 정보</h1>
                             <div>
                                <span class="text-strong"> 1</span> / 2 pages
                             </div>
                         </section>
 
-                        <nav class="pager">
+                        <nav class="pager mt-3">
                             <h1 class="d-none">페이저</h1>
                             <div class="button">이전</div>
                             <ul>
-                                <li>1</li>
+                                <li class="text-strong">1</li>
                                 <li>2</li>
                                 <li>3</li>
                                 <li>4</li>
@@ -174,12 +188,19 @@
     </div>
 
     <script>
+
+        // var html = "<span>안녕하세요</span>";
+        // // window.document.write(html);
+        // asideTitle.innerHTML += html;
+        
+        // var result = window.confirm("정말 ?");
+        // console.log(result);
        
-       var x = prompt("x값을 입력하세요",0);
-       var y = prompt("y값을 입력하세요",0);
-        x = parseInt(x);
-        y = parseInt(y);
-        alert(x+y);
+    //    var x = prompt("x값을 입력하세요",0);
+    //    var y = prompt("y값을 입력하세요",0);
+    //     x = parseInt(x);
+    //     y = parseInt(y);
+    //     alert(x+y);
         
         // var x = 3;
         // var y = 0;
