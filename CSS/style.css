@@ -186,7 +186,10 @@ a{
     
     grid-area: main;
     padding: 45px 0px 50px 35px;
+    position: relative;/*메인기반*/
 }
+
+
 .main-title{
     font-family: "맑은 고딕";
     font-size: 21px;
@@ -194,9 +197,12 @@ a{
     color: #646464;
     padding-left: 25px;
     background: url("../images/icon-main-title.png") no-repeat left center;
-
 }
 .breadcrumb{
+    position: absolute;
+    right: 0;
+    top: 52px;
+
     font-family: "맑은 고딕";
     font-weight: bold;
     font-size: 10px;
@@ -217,6 +223,11 @@ a{
             padding-left: 20px;
             background: url("../images/icon-home.png") no-repeat 0px center;
         }
+
+.search-form{
+    margin-top: 26px;
+}
+
 .page-state>div{
     text-align: right;
 }

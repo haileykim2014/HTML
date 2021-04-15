@@ -7,15 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <script>
-        function printSum(){
-            var x = prompt('x값을 입력하세요');
-            var y = prompt('y값을 입력하세요');
-            x = parseInt(x);
-            y = parseInt(y);
-            alert(x+y);
-        }
-    </script>
+    <script src="list.js"></script>
 </head>
 
 <body>
@@ -77,12 +69,12 @@
         <div id="body">
             <div class="float-content">
                 <aside id="aside">
-                    <h1 id="asideTitle" onclick="printSum();">고객센터</h1>
-                    <script>
+                    <h1 id="aside-title">고객센터</h1>
+                    <!-- <script>
                         var html = "<span>안녕하세요</span>";
                         // window.document.write(html);
                         asideTitle.innerHTML += html;
-                    </script>
+                    </script> -->
                     <nav class="main-aside-menu">
                         <h1>고객센터메뉴</h1>
                         <ul>
@@ -115,7 +107,11 @@
                             </ol>
                         </section>
 
-                        <section>
+                        <section class="search-form">
+                            <h1>검색 폼</h1>
+                        </section>
+
+                        <section class="mt-3">
                             <h1 class="d-none">공지사항 목록</h1>
                             <table class="table">
                                 <thead>
